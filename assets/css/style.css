@@ -256,9 +256,8 @@ body{
   clip-path: circle(130% at 73% 5%);
 }
 .search-wrapper{
-  display: flex;
   position:relative;
-  border-block-end: 1px solid var(--outline);
+  border-block-end: none;
 }
 .search-wrapper::before{
   content: "";
@@ -295,12 +294,17 @@ body{
 .search-wrapper .leading-icon{
   position:absolute;
   top:50%;
-  left: 28px;
-  transform: translate(-50%, -50%);
+  left: 16px;
+  transform: translateY(-50%);
 }
-
+.search-view > div:first-child {
+  border-block-end: 1px solid var(--outline);
+}
 .search-wrapper > .m-icon{display: none}
-
+.search-view > div > .icon-btn {
+  background-color: transparent;
+  box-shadow: none;
+}
 .search-wrapper .icon-btn{
   background-color: transparent;
   box-shadow: none;

@@ -27,12 +27,15 @@
             </a>
             <div class="search-view active" data-search-view>
 
-                <div class="search-wrapper">
-                    <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
-                    <span class="m-icon leading-icon">search</span>
-                    <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+ <div style="display: flex; align-items: center; gap: 8px; padding: 0 16px;">
+                    <button class="icon-btn has-state" aria-label="close search" data-search-toggler>
                         <span class="m-icon">arrow_back</span>
                     </button>
+                    
+                    <div class="search-wrapper" style="flex: 1; border: none;">
+                        <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
+                        <span class="m-icon leading-icon">search</span>
+                    </div>
                 </div>
 
                 <div class="search-result" data-search-result>
