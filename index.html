@@ -21,19 +21,22 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container">
+
             <a href="#" class="logo">
-                <img src="path/to/logo.png" width="364" height="58" alt="logo">
+                <img src="https://imgix.ranker.com/user_node_img/50072/1001437857/original/jugem-jugem-photo-u1" width="364" height="58" alt="logo">
             </a>
-            <div class="search-view" data-search-view>
+            <div class="search-view active" data-search-view>
+
                 <div class="search-wrapper">
                     <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
-                    <span class="m-icon">search</span>
-                </div>
-                <div class="search-result" data-search-result>
+                    <span class="m-icon leading-icon">search</span>
                     <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
                         <span class="m-icon">arrow_back</span>
                     </button>
-                    <ul class="view-list">
+                </div>
+
+                <div class="search-result" data-search-result>
+                    <ul class="view-list" data-search-list>
                         <li class="view-item">
                             <span class="m-icon">location_on</span>
                             <div>
@@ -43,18 +46,20 @@
                             <a href="#" class="item-link has-state" data-search-toggler></a>
                         </li>
                     </ul>
+                    </div>
                 </div>
-            </div>
+           
             <div class="header-actions">
                 <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
                     <span class="m-icon">search</span>
                 </button>
-                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn disabled>
+                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
                     <span class="m-icon">my_location</span>
                     <span class="span">Current Location</span>
                 </a>
             </div>
         </div>
+        
     </header>
 </body>
 </html>
