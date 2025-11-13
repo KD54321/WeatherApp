@@ -21,21 +21,20 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container">
-
             <a href="#" class="logo">
                 <img src="https://imgix.ranker.com/user_node_img/50072/1001437857/original/jugem-jugem-photo-u1" width="364" height="58" alt="logo">
             </a>
-            <div class="search-view active" data-search-view>
+            <div class="search-view" data-search-view>
+                <div class="search-wrapper">
 
- <div style="display: flex; align-items: center; gap: 8px; padding: 16px;">
-                    <button class="icon-btn has-state" aria-label="close search" data-search-toggler>
-                        <span class="m-icon">arrow_back</span>
-                    </button>
-                    
-                    <div class="search-wrapper" style="flex: 1; border: none;">
-                        <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
-                        <span class="m-icon leading-icon">search</span>
-                    </div>
+            <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                    <span class="m-icon">arrow_back</span>
+                </button>
+
+                    <input type="search" name="search" placeholder="Search city..." autocomplete="off" class="search-field" data-search-field>
+
+                    <span class="m-icon">search</span>
+            
                 </div>
 
                 <div class="search-result" data-search-result>
@@ -46,23 +45,67 @@
                                 <p class="item-title">Montreal</p>
                                 <p class="label-2 item-subtitle">Montreal, Qc</p>
                             </div>
+
                             <a href="#" class="item-link has-state" data-search-toggler></a>
+
                         </li>
                     </ul>
-                    </div>
                 </div>
-           
+
+            </div>
+
             <div class="header-actions">
                 <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
-                    <span class="m-icon">search</span>
+                    <span class="m-icon icon">search</span>
                 </button>
+
                 <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
                     <span class="m-icon">my_location</span>
                     <span class="span">Current Location</span>
                 </a>
+
             </div>
+
+
         </div>
-        
     </header>
+    <main>
+        <article class="container">
+            <div class="content-left">
+                <!--
+                    -CURRENT WEATHER
+                -->
+                <section class="section current-weather" aria-label="current weather" data-current-weather>
+                    <div class="card card-lg current-weather-card">
+                        <h2 class="title card-title">Now</h2>
+                        <div class="wrapper">
+                            <p class="heading">25&deg;<sup>c</sup></p>
+                            <img src="./assets/images/sun.png" width="64" height="64" alt="Overcast Clouds" class="weather-icon">
+
+                        </div>
+                        <p class="body-3">Overcast Clouds</p>
+                        <ul class="meta-list">
+                            <li class="meta-item">
+                                <span class="m-icon">calendar_today</span>
+                                <p class="title-3 meta-text">Thursday 13, Nov</p>
+                            </li>
+
+                            <li class="meta-item">
+                                <span class="m-icon">location_on</span>
+                                <p class="title-3 meta-text">Montreal, Qc</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!--
+                    -FORECAST
+                -->
+
+            </div>
+        </article>
+    </main>
+
 </body>
 </html>
