@@ -374,9 +374,8 @@ body{
 
 /*MAIN*/
 main{
-  height: calc(100vh-80px);
-  height: calc(100svh-80px);/*mobile*/
-  overflow: hidden;
+  height: calc(100vh - 80px);
+  height: calc(100svh - 80px);/*mobile*/
 }
 article.container{
   position: relative;
