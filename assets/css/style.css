@@ -606,7 +606,7 @@ article.container::before{
   text-align: center;
   gap:12px 24px;
   margin-block-start: 28px;
-  display: none;
+  /* display: none; */
 }
 
 .fade-in .footer {display:flex};
@@ -630,7 +630,7 @@ article.container::before{
   display:none;
 }
 
-.loading::before{
+/* .loading::before {
   content: "";
   width: 48px;
   height: 48px;
@@ -638,4 +638,4 @@ article.container::before{
   border-block-start-color: transparent ;
   border-radius: var(--radius-circle);
   animation: loading 500ms linear infinite;
-}
+} */
