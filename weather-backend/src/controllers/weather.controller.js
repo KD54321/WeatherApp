@@ -109,7 +109,7 @@ exports.reverseGeocode = async(req, res, next)=>{
                 error: ' Latitude and longitude are required'
             })
         }
-        const data = openweatherService.reverseGeocode(lat, lon);
+        const data = await openweatherService.reverseGeocode(lat, lon);
         res.json({
             success:true,
             data:data
