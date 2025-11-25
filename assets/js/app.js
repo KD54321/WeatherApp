@@ -1,6 +1,6 @@
 'use strict'
 
-import {fetchDate, url} from "./api.js"
+import {fetchData, url} from "./api.js"
 import * as module from "./module.js"
 
 /**
@@ -21,3 +21,21 @@ const searchTogglers = document.querySelectorAll("[data-search-toggler]");
 
 const toggleSearch = () => searchView.classList.toggle("active");
 addEventOnElements(searchTogglers, "click", toggleSearch);
+
+export const updateWeather = function(lat, lon) {
+    console.log('Updating weather for:', lat, lon);
+    
+    // Fetch all weather data
+    fetchData(url.allWeatherData(lat, lon), function(data) {
+        console.log('All weather data received:', data);
+        
+    });
+}
+
+export const error404 = function() {
+    const errorContent = document.querySelector("[data-error-content]");
+    if (errorContent) {
+        errorContent.style.display = "flex";
+    }
+    console.error('404 - Page not found');
+}

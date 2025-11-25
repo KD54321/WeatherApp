@@ -1,35 +1,46 @@
 'use strict';
-require('dotenv').config();
-const api_key = process.env.api_key;
+const API_BASE_URL = 'http://localhost:3000/api/weather'
 /**
  * 
- * @param {string} URL API url 
+ * @param {string} endpoint API url 
  * @param {Function} callback callback
  */
-export const fetchData = function(URL, callback){
-    fetch(`${URL}&appid=${api_key}`)
-    .then(res=> res.json())
-    .then(data=>callback(data))
+export const fetchData = function(endpoint, callback){
+    fetch(`${API_BASE_URL}${endpoint}`)
+    .then(res=>{
+        if(!res.ok){
+            throw new Error(`HTTP error. status: ${res.status}`)
+        }
+        return res.json();
+}).then(response=>{
+    if(response.success){
+        callback(response.data);
+    }else{
+        throw new Error(response.error || 'API request failed')
+    }
+}).catch(error=>{
+    console.log('API Error:', error)
+})
 }
 
 export const url = {
     currentWeather(lat, lon){
-        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
+        return `/current?lat=${lat}&lon=${lon}`;
     },
     forecast(lat, lon){
-        return `https://api.openweathermap.org/data/2.5/forecast?${lat}${lon}&units=metric`
+        return `/forecast?lat=${lat}&lon=${lon}`;
     },
     airPollution(lat, lon){
-        return `http://api.openweathermap.org/data/2.5/air_pollution?${lat}${lon}`
+        return `/air-quality?lat=${lat}&lon=${lon}`;
     },
     reverseGeo(lat, lon){
-        return `http://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`
+        return `/reverse-geocode?lat=${lat}&lon=${lon}`;
     },
-    /**
-     * 
-     * @param {string} query Search query e.g.: "Montreal", "New York"
-     */
     geo(query){
-        return `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
+        return `/search?q=${encodeURIComponent(query)}`;
+    },
+    // NEW: Get all data in one call (more efficient!)
+    allWeatherData(lat, lon){
+        return `/all?lat=${lat}&lon=${lon}`;
     }
 }
