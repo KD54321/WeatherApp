@@ -5,7 +5,7 @@ const errorHandler = require('./middleware/errorHandler')
 
 const app = express();
 
-const allowedOrigins = process.env.NODE_ENV === 'production'?[process.env.FRONTEND_URL, 'http://localhost']:['http://localhost:5500', 'http://127.0.0.1:5500', 'http://localhost:5501', 'http://127.0.0.1:5501'];
+const allowedOrigins = process.env.NODE_ENV === 'production'?[process.env.FRONTEND_URL, 'http://localhost', 'http://98.92.154.113']:['http://localhost:5500', 'http://127.0.0.1:5500', 'http://localhost:5501', 'http://127.0.0.1:5501'];
 
 app.use(cors({
     origin: function(origin, callback){

@@ -1,5 +1,5 @@
 'use strict';
-const API_BASE_URL = 'http://localhost:3000/api/weather'
+const API_BASE_URL = 'http://98.92.154.113:3000/api/weather'
 /**
  * 
  * @param {string} endpoint API url 
